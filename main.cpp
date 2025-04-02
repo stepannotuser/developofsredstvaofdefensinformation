@@ -18,6 +18,13 @@ public:
     }
 };
 
+class TretiyEntity : public AbstractEntity {                                                                                          //
+public:
+    string GetName() const override {
+        return "TretiyEntity";
+    }
+};
+
 class IRepository {
 public:
     virtual void Save(AbstractEntity* entity) = 0;
@@ -43,6 +50,16 @@ public:
   }
 };
 
+class TretiyRepository : public IRepository {                                                                                         //
+public:
+    void Save(AbstractEntity* entity) override {
+        TretiyEntity* tretiy = dynamic_cast<TretiyEntity*>(entity);
+        if (tretiy != nullptr) {
+            cout << "Save object: " << tretiy->GetName() << endl;
+        }
+    }
+};
+
 
 int main() {
 
@@ -59,5 +76,9 @@ int main() {
 
     delete role;                         //
 
+    TretiyEntity tretiy;                               //
+    TretiyRepository tretiyrepo;                       //
+    tretiyrepo.Save(&tretiy);                          //
+    
     return 0;
 }
