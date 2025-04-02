@@ -47,7 +47,6 @@ public:
 int main() {
 
     AccountEntity account;
-
     RoleEntity* role = new RoleEntity(); //
 
     AccountRepository accountRepo;
