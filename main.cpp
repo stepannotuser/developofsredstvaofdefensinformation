@@ -1,3 +1,11 @@
+#include <iostream>
+#include <string>
+
+//using namespace std;
+using std::string;
+using std::cout;
+using std::endl;
+
 class AbstractEntity {
 public:
     virtual string GetName() const = 0;
