@@ -1,7 +1,10 @@
 #include <iostream>
 #include <string>
 
-using namespace std;
+//using namespace std;
+using std::cout;
+using std::endl;
+using std::string;
 
 class ILogger {
 public:
